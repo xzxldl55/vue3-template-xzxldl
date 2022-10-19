@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>江西省普惠金融综合服务平台</title>
+    <style>
+        #no-support {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            line-height: 100vh;
+            text-align: center;
+        }
+
+        #no-support a {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="no-support">
+        <p class="browsehappy">
+            您正在使用 <strong>旧浏览器</strong> . 为了更好的体验，请 <a href="http://browsehappy.com/">更新</a> 您的浏览器.
+        </p>
+    </div>
+    <div id="app"></div>
+    <!-- 浏览器版本HACK，低版本浏览器（不支持Proxy特性），指引用户下载新浏览器 -->
+    <script>
+        try {
+            var proxy = new Proxy({}, {}); /* Vue3 使用Proxy特性为准: Chrome49+, Safari10+, Edge, Firefox18+ */
+        } catch (error) {
+            document.querySelector('#no-support').style.display  = 'block';
+            document.querySelector('#app').style.display = 'none';
+        }
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+/* 组件库样式覆盖文件 */
+
+// 对于通用的存在变量的样式可如下快捷覆盖
+/*
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': green,
+    ),
+  ),
+);
+*/
